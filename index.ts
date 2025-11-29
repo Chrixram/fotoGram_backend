@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 import fileUpload from 'express-fileupload';
 
 import postRouts from './routes/post.route';
+import contentBlockerRoutes from './routes/content-blocker';
 
 
 const server = new Server();
@@ -22,6 +23,7 @@ server.app.use(fileUpload( {useTempFiles: true})) ;
 //Rutas de mi aplicacion
 server.app.use( '/user', userRourtes );
 server.app.use( '/post', postRouts );
+server.app.use('/content-blocker', contentBlockerRoutes);
 
 
 //Conectar DB
